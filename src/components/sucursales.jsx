@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Space, Button, Table, Modal, message, Switch } from 'antd';
-import CrearSucursal from './CrearSucursal';
+import Crearsucursal from './crearsucursal';
 import mapa from './res/mapa.png';
 import MapaActual from './mapaactual';
 
@@ -222,7 +222,7 @@ const Sucursales = () => {
                 onCancel={handleCancel}
                 footer={null}
             >
-                <CrearSucursal />
+                <Crearsucursal />
             </Modal>
         </div>
     );
