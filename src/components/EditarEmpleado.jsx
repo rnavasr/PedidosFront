@@ -16,7 +16,7 @@ const EditarEmpleado = ({idsucur}) => {
                 if(!idsucur){
                     idsucur=0;
                 }
-                const responseEmpleados = await fetch('http://127.0.0.1:8000/empleado/listar-empleados/' + idsucur + '/');
+                const responseEmpleados = await fetch('https://pedidosbak-production.up.railway.app/empleado/listar-empleados/' + idsucur + '/');
 
                 if (!responseEmpleados.ok) {
                     throw new Error('Error fetching empleados');
@@ -29,7 +29,7 @@ const EditarEmpleado = ({idsucur}) => {
             }
 
             try {
-                const responseSucursales = await fetch('http://127.0.0.1:8000/sucursal/sucusarleslist/');
+                const responseSucursales = await fetch('https://pedidosbak-production.up.railway.app/sucursal/sucusarleslist/');
                 if (!responseSucursales.ok) {
                     throw new Error('Error fetching sucursales');
                 }
@@ -70,7 +70,7 @@ const EditarEmpleado = ({idsucur}) => {
             console.log('ID del empleado:', editedEmpleado.id);
             console.log('Datos del formulario:', form.getFieldsValue());
 
-            const response = await fetch('http://127.0.0.1:8000/empleado/editar-empleado/' + editedEmpleado.tipo + '/' + editedEmpleado.id + '/', {
+            const response = await fetch('https://pedidosbak-production.up.railway.app/empleado/editar-empleado/' + editedEmpleado.tipo + '/' + editedEmpleado.id + '/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -88,7 +88,7 @@ const EditarEmpleado = ({idsucur}) => {
                     if(!idsucur){
                         idsucur=0;
                     }
-                    const responseEmpleados = await fetch('http://127.0.0.1:8000/empleado/listar-empleados/' + idsucur + '/');
+                    const responseEmpleados = await fetch('https://pedidosbak-production.up.railway.app/empleado/listar-empleados/' + idsucur + '/');
     
                     if (!responseEmpleados.ok) {
                         throw new Error('Error fetching empleados');

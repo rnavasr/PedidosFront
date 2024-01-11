@@ -8,7 +8,7 @@ const LoginForm = ({ onLogin }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://127.0.0.1:8000/Login/rol/', {
+        const response = await fetch('https://pedidosbak-production.up.railway.app/Login/rol/', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -44,7 +44,7 @@ const LoginForm = ({ onLogin }) => {
   const onFinish = async (values) => {
     try {
       // Realizar la solicitud a la API para iniciar sesión
-      const response = await fetch('http://127.0.0.1:8000/Login/iniciar_sesion/', {
+      const response = await fetch('https://pedidosbak-production.up.railway.app/Login/iniciar_sesion/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

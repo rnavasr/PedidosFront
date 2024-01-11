@@ -22,7 +22,7 @@ const Crearsucursal = () => {
             formData.append('snombre', values.nombre);
             formData.append('imagen', values.imagen[0].originFileObj);
 
-            const respuesta = await fetch('http://127.0.0.1:8000/sucursal/crear/', {
+            const respuesta = await fetch('https://pedidosbak-production.up.railway.app/sucursal/crear/', {
                 method: 'POST',
                 body: formData,
             });
@@ -71,7 +71,7 @@ const Crearsucursal = () => {
                         {
                             validator: async (_, value) => {
                                 try {
-                                    const response = await fetch('http://127.0.0.1:8000/sucursal/sucursalExist/', {
+                                    const response = await fetch('https://pedidosbak-production.up.railway.app/sucursal/sucursalExist/', {
                                         method: 'POST',
                                         headers: {
                                             'Content-Type': 'application/json',
@@ -107,7 +107,7 @@ const Crearsucursal = () => {
                     {
                         validator: async (_, value) => {
                             try {
-                                const response = await fetch('http://127.0.0.1:8000/sucursal/sucursalExist/', {
+                                const response = await fetch('https://pedidosbak-production.up.railway.app/sucursal/sucursalExist/', {
                                     method: 'POST',
                                     headers: {
                                         'Content-Type': 'application/json',
@@ -198,7 +198,7 @@ const Crearsucursal = () => {
                     {
                         validator: async (_, value) => {
                             try {
-                                const response = await fetch('http://127.0.0.1:8000/sucursal/sucursalExist/', {
+                                const response = await fetch('https://pedidosbak-production.up.railway.app/sucursal/sucursalExist/', {
                                     method: 'POST',
                                     headers: {
                                         'Content-Type': 'application/json',

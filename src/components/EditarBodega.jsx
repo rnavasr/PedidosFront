@@ -53,7 +53,7 @@ const EditarBodegaForm = () => {
             }
 
             const values = await form.validateFields();
-            const response = await fetch(`http://127.0.0.1:8000/bodega/editarBodega/${editingBodega.id}/`, {
+            const response = await fetch(`https://pedidosbak-production.up.railway.app/bodega/editarBodega/${editingBodega.id}/`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -78,7 +78,7 @@ const EditarBodegaForm = () => {
 
     const cargarBodegas = async () => {
         try {
-            const response = await fetch('http://127.0.0.1:8000/bodega/listarBodega/');
+            const response = await fetch('https://pedidosbak-production.up.railway.app/bodega/listarBodega/');
             const data = await response.json();
             setBodegas(data.bodegas);
         } catch (error) {

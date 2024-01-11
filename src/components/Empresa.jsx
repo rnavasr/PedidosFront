@@ -14,7 +14,7 @@ const Empresa = () => {
 
   const obtenerInformacionEmpresa = async () => {
     try {
-      const respuesta = await fetch('http://127.0.0.1:8000/empresa/infoEmpresa/', {
+      const respuesta = await fetch('https://pedidosbak-production.up.railway.app/empresa/infoEmpresa/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -84,7 +84,7 @@ const Empresa = () => {
     }
 
     try {
-      const respuesta = await fetch(`http://127.0.0.1:8000/empresa/editar/`, {
+      const respuesta = await fetch(`https://pedidosbak-production.up.railway.app/empresa/editar/`, {
         method: 'POST',
         body: formData,
       });

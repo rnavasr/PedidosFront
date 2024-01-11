@@ -38,7 +38,7 @@ const Sucursales = () => {
         setSucursalesData([]);
 
         const { current, pageSize } = pagination;
-        const url = `http://127.0.0.1:8000/sucursal/sucusarleslist/?page=${current}&pageSize=${pageSize}`;
+        const url = `https://pedidosbak-production.up.railway.app/sucursal/sucusarleslist/?page=${current}&pageSize=${pageSize}`;
 
         fetch(url)
             .then((response) => response.json())
@@ -63,7 +63,7 @@ const Sucursales = () => {
         const formData = new FormData();
         formData.append('id_sucursal', record.id_sucursal);
         formData.append('sestado', checked ? '1' : '0');
-        fetch('http://127.0.0.1:8000/sucursal/actsucursal/', {
+        fetch('https://pedidosbak-production.up.railway.app/sucursal/actsucursal/', {
             method: 'POST',
             body: formData,
         })
@@ -95,7 +95,7 @@ const Sucursales = () => {
                 formData.append('latitud', latitud);
                 formData.append('longitud', longitud);
 
-                fetch('http://127.0.0.1:8000/sucursal/editarubicacion/', {
+                fetch('https://pedidosbak-production.up.railway.app/sucursal/editarubicacion/', {
                     method: 'POST',
                     body: formData,
                 })

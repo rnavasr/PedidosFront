@@ -12,7 +12,7 @@ const CrearComponenteForm = () => {
   useEffect(() => {
     const fetchUnidadesMedida = async () => {
       try {
-        const response = await fetch('http://127.0.0.1:8000/producto/listarum/');
+        const response = await fetch('https://pedidosbak-production.up.railway.app/producto/listarum/');
         if (response.ok) {
           const data = await response.json();
           setUnidadesMedida(data.unidades_medida);
@@ -38,7 +38,7 @@ const CrearComponenteForm = () => {
     }
 
     try {
-      const response = await fetch('http://127.0.0.1:8000/producto/crearcomponente/', {
+      const response = await fetch('https://pedidosbak-production.up.railway.app/producto/crearcomponente/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -36,7 +36,7 @@ const CrearCategoriaCombos = () => {
         formData.append('imagencategoria', values.imagencategoria[0].originFileObj);
       }
   
-      const response = await fetch('http://127.0.0.1:8000/combos/crearcategoriacombos/', {
+      const response = await fetch('https://pedidosbak-production.up.railway.app/combos/crearcategoriacombos/', {
         method: 'POST',
         body: formData,
       });

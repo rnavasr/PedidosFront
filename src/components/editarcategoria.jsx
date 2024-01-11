@@ -9,7 +9,7 @@ const EditarCategoria = ({ onCancel }) => {
 
   const fetchCategorias = async () => {
     try {
-      const response = await fetch('http://127.0.0.1:8000/producto/listar_categorias/');
+      const response = await fetch('https://pedidosbak-production.up.railway.app/producto/listar_categorias/');
       const data = await response.json();
       setCategorias(data.categorias);
     } catch (error) {
@@ -20,7 +20,7 @@ const EditarCategoria = ({ onCancel }) => {
   useEffect(() => {
     const fetchTiposProductos = async () => {
       try {
-        const response = await fetch('http://127.0.0.1:8000/producto/listarproductos/');
+        const response = await fetch('https://pedidosbak-production.up.railway.app/producto/listarproductos/');
         const data = await response.json();
         setTiposProductos(data.tipos_productos);
       } catch (error) {
@@ -52,7 +52,7 @@ const EditarCategoria = ({ onCancel }) => {
       }
 
       const response = await fetch(
-        `http://127.0.0.1:8000/producto/editar_categoria/${selectedCategoria.id_categoria}/`,
+        `https://pedidosbak-production.up.railway.app/producto/editar_categoria/${selectedCategoria.id_categoria}/`,
         {
           method: 'POST',
           body: formData,

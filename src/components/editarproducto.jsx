@@ -18,7 +18,7 @@ const EditarProducto = () => {
 
     const fetchData = async (page) => {
         try {
-            const response = await fetch(`http://127.0.0.1:8000/producto/listar/?page=${page}`);
+            const response = await fetch(`https://pedidosbak-production.up.railway.app/producto/listar/?page=${page}`);
             const data = await response.json();
             setProductos(data.productos);
             setTotal(data.total);
@@ -38,7 +38,7 @@ const EditarProducto = () => {
     useEffect(() => {
         const fetchUmList = async () => {
             try {
-                const response = await fetch('http://127.0.0.1:8000/producto/listarum/');
+                const response = await fetch('https://pedidosbak-production.up.railway.app/producto/listarum/');
                 const data = await response.json();
                 setUmList(data.unidades_medida);
             } catch (error) {
@@ -48,7 +48,7 @@ const EditarProducto = () => {
 
         const fetchCategoriaList = async () => {
             try {
-                const response = await fetch('http://127.0.0.1:8000/producto/listar_categorias/');
+                const response = await fetch('https://pedidosbak-production.up.railway.app/producto/listar_categorias/');
                 const data = await response.json();
                 setCategoriaList(data.categorias);
             } catch (error) {
@@ -103,7 +103,7 @@ const EditarProducto = () => {
                 formData.append('imagenp', imagenpInput[0].originFileObj);
             }
 
-            const response = await fetch(`http://127.0.0.1:8000/producto/editarproducto/${productId}/`, {
+            const response = await fetch(`https://pedidosbak-production.up.railway.app/producto/editarproducto/${productId}/`, {
                 method: 'POST',
                 body: formData,
             });

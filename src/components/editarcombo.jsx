@@ -10,7 +10,7 @@ const EditarCombo = () => {
   useEffect(() => {
     const fetchCombos = async () => {
       try {
-        const responseCombos = await fetch('http://127.0.0.1:8000/combos/ver_combos/');
+        const responseCombos = await fetch('https://pedidosbak-production.up.railway.app/combos/ver_combos/');
         if (!responseCombos.ok) {
           throw new Error('Error fetching combos');
         }
@@ -23,7 +23,7 @@ const EditarCombo = () => {
 
     const fetchCategoriasCombos = async () => {
       try {
-        const responseCategoriasCombos = await fetch('http://127.0.0.1:8000/combos/listcategoria/');
+        const responseCategoriasCombos = await fetch('https://pedidosbak-production.up.railway.app/combos/listcategoria/');
         if (!responseCategoriasCombos.ok) {
           throw new Error('Error fetching categorias combos');
         }
@@ -56,7 +56,7 @@ const EditarCombo = () => {
       formData.append('descripcioncombo', values.descripcioncombo);
       formData.append('preciounitario', values.preciounitario);
 
-      const response = await fetch(`http://127.0.0.1:8000/combos/editarcombo/${selectedCombo.id_combo}/`, {
+      const response = await fetch(`https://pedidosbak-production.up.railway.app/combos/editarcombo/${selectedCombo.id_combo}/`, {
         method: 'POST',
         body: formData,
       });
@@ -78,7 +78,7 @@ const EditarCombo = () => {
 
   const fetchCombos = async () => {
     try {
-      const responseCombos = await fetch('http://127.0.0.1:8000/combos/ver_combos/');
+      const responseCombos = await fetch('https://pedidosbak-production.up.railway.app/combos/ver_combos/');
       if (!responseCombos.ok) {
         throw new Error('Error fetching combos');
       }

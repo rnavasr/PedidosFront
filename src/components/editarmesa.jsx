@@ -8,7 +8,7 @@ const EditarMesa = () => {
 
   useEffect(() => {
     // Hacer la solicitud a tu API para obtener las mesas
-    fetch('http://127.0.0.1:8000/Mesas/ver_mesas/')
+    fetch('https://pedidosbak-production.up.railway.app/Mesas/ver_mesas/')
       .then(response => response.json())
       .then(data => setMesas(data.mesas))
       .catch(error => console.error('Error al obtener las mesas:', error));
@@ -37,13 +37,13 @@ const EditarMesa = () => {
       formData.append('max_personas', values.max_personas);
 
       // Hacer la solicitud a tu API para editar la mesa
-      await fetch(`http://127.0.0.1:8000/Mesas/editar_mesa/${mesa_id}/`, {
+      await fetch(`https://pedidosbak-production.up.railway.app/Mesas/editar_mesa/${mesa_id}/`, {
         method: 'POST',
         body: formData,
       });
 
       // Actualizar la lista de mesas después de la edición
-      fetch('http://127.0.0.1:8000/Mesas/ver_mesas/')
+      fetch('https://pedidosbak-production.up.railway.app/Mesas/ver_mesas/')
         .then(response => response.json())
         .then(data => setMesas(data.mesas))
         .catch(error => console.error('Error al obtener las mesas:', error));

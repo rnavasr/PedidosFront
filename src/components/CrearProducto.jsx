@@ -13,7 +13,7 @@ const CrearProducto = () => {
   useEffect(() => {
     const fetchCategorias = async () => {
       try {
-        const response = await fetch('http://127.0.0.1:8000/producto/listar_categorias/');
+        const response = await fetch('https://pedidosbak-production.up.railway.app/producto/listar_categorias/');
         if (response.ok) {
           const data = await response.json();
           setCategorias(data.categorias);
@@ -29,7 +29,7 @@ const CrearProducto = () => {
 
     const fetchUnidadesMedida = async () => {
       try {
-        const response = await fetch('http://127.0.0.1:8000/producto/listarum/');
+        const response = await fetch('https://pedidosbak-production.up.railway.app/producto/listarum/');
         if (response.ok) {
           const data = await response.json();
           setUnidadesMedida(data.unidades_medida);
@@ -78,7 +78,7 @@ const CrearProducto = () => {
       console.log("Hay imagn?" + imagenP);
       formData.append('imagen_p', imagenP);
 
-      const response = await fetch('http://127.0.0.1:8000/producto/crearproducto/', {
+      const response = await fetch('https://pedidosbak-production.up.railway.app/producto/crearproducto/', {
         method: 'POST',
         body: formData,
       });

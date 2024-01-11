@@ -10,7 +10,7 @@ const EditarTipoProducto = () => {
 
   useEffect(() => {
     // Obtener la lista de tipos de productos al cargar el componente
-    fetch('http://127.0.0.1:8000/producto/listarproductos/')
+    fetch('https://pedidosbak-production.up.railway.app/producto/listarproductos/')
       .then(response => response.json())
       .then(data => setTiposProductos(data.tipos_productos))
       .catch(error => console.error('Error fetching tipos de productos:', error));
@@ -64,7 +64,7 @@ const EditarTipoProducto = () => {
       formData.append('tpnombre', values.name);
       formData.append('descripcion', values.description);
 
-      const response = await fetch(`http://127.0.0.1:8000/producto/editar_tipo_producto/${tipoProductoId}/`, {
+      const response = await fetch(`https://pedidosbak-production.up.railway.app/producto/editar_tipo_producto/${tipoProductoId}/`, {
         method: 'POST',
         body: formData,
       });
@@ -76,7 +76,7 @@ const EditarTipoProducto = () => {
         setModalVisible(false);
 
         // Actualizar la lista de tipos de productos después de la edición
-        fetch('http://127.0.0.1:8000/producto/listarproductos/')
+        fetch('https://pedidosbak-production.up.railway.app/producto/listarproductos/')
           .then(response => response.json())
           .then(data => setTiposProductos(data.tipos_productos))
           .catch(error => console.error('Error fetching tipos de productos:', error));
