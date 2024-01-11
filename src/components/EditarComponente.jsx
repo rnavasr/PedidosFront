@@ -14,7 +14,7 @@ const EditarComponenteForm = () => {
   useEffect(() => {
     const fetchComponentes = async () => {
       try {
-        const response = await fetch('https://pedidosbak-production.up.railway.app/producto/listarcomponentes/');
+        const response = await fetch('http://127.0.0.1:8000/producto/listarcomponentes/');
         if (response.ok) {
           const data = await response.json();
           const componentesWithDefaultCosto = data.componentes.map((componente) => ({
@@ -34,7 +34,7 @@ const EditarComponenteForm = () => {
 
     const fetchUnidadesMedida = async () => {
       try {
-        const response = await fetch('https://pedidosbak-production.up.railway.app/producto/listarum/');
+        const response = await fetch('http://127.0.0.1:8000/producto/listarum/');
         if (response.ok) {
           const data = await response.json();
           setUnidadesMedida(data.unidades_medida);
@@ -103,7 +103,7 @@ const EditarComponenteForm = () => {
 
   const handleModalOk = async (values) => {
     try {
-      const response = await fetch(`https://pedidosbak-production.up.railway.app/producto/editarcomponente/${editComponente.id_componente}/`, {
+      const response = await fetch(`http://127.0.0.1:8000/producto/editarcomponente/${editComponente.id_componente}/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

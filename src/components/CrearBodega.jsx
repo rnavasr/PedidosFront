@@ -11,7 +11,7 @@ const CrearBodegaForm = () => {
     // Obtener la lista de sucursales al cargar el componente
     const fetchSucursales = async () => {
       try {
-        const response = await fetch('https://pedidosbak-production.up.railway.app/sucursal/sucusarleslist/');
+        const response = await fetch('http://127.0.0.1:8000/sucursal/sucusarleslist/');
         const data = await response.json();
         setSucursales(data.sucursales);
       } catch (error) {
@@ -25,7 +25,7 @@ const CrearBodegaForm = () => {
   const onFinish = async (values) => {
     try {
       setLoading(true);
-      const response = await fetch('https://pedidosbak-production.up.railway.app/bodega/crearBodega/', {
+      const response = await fetch('http://127.0.0.1:8000/bodega/crear/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
