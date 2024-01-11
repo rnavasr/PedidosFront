@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Space, Button, Table, Modal, message, Switch, Form, Input } from 'antd';
 import mapa from './res/mapa.png';
 import AdminSucursal from './adminsucursal';
-import CrearSucursal from './CrearSucursal';
+import Crearsucursal from './crearsucursal';
 
 const ListSucursales = () => {
     const [loading, setLoading] = useState(true);
@@ -190,7 +190,7 @@ const ListSucursales = () => {
                 onCancel={handleCancel}
                 footer={null}
             >
-                <CrearSucursal />
+                <Crearsucursal />
             </Modal>
         </div>
     );
